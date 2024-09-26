@@ -1,15 +1,36 @@
+import { useEffect } from "react";
+import formDepartmentSelectData from "../../../common/helpers/formDepartmentSelectData";
 import formStateSelectData from "../../../common/helpers/formStateSelectData";
 import { useAppDispatch } from "../../../common/utils/hooks";
 import { createEmployeeSlice } from "../../../features/createEmployee/createEmployeeSlice";
 import { modalSlice } from "../../../features/modal/modalSlice";
+import InputDate from "../InputDate/InputDate";
+import InputSelect from "../InputSelect/InputSelect";
 
 function CreateEmployeeForm() {
     const dispatch = useAppDispatch();
+    useEffect(() => {
+        dispatch(createEmployeeSlice.actions.storeEmployeesFromLocalStorage());
+    }, []);
+
+    function testDates(dateBirth: string, dateStart: string) {
+        let date1 = new Date(dateBirth);
+        let date2 = new Date(dateStart);
+        let diffYears = date2.getFullYear() - date1.getFullYear();
+        if (
+            date2.getMonth() < date1.getMonth() ||
+            (date2.getMonth() === date1.getMonth() &&
+                date2.getDate() < date1.getDate())
+        ) {
+            diffYears--;
+        }
+        return date1 < date2 && diffYears > 16;
+    }
 
     function saveEmployee(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const {
-            firstName,
+            firstname,
             lastname,
             dateOfBirth,
             startDate,
@@ -20,7 +41,7 @@ function CreateEmployeeForm() {
             department,
         } = e.currentTarget;
         const check =
-            firstName &&
+            firstname &&
             lastname &&
             dateOfBirth &&
             startDate &&
@@ -28,13 +49,23 @@ function CreateEmployeeForm() {
             city &&
             state &&
             zipCode &&
-            department;
+            department &&
+            firstname.value &&
+            lastname.value &&
+            dateOfBirth.value &&
+            startDate.value &&
+            street.value &&
+            city.value &&
+            state.value &&
+            zipCode.value &&
+            department.value &&
+            testDates(dateOfBirth.value, startDate.value);
         if (check) {
             dispatch(modalSlice.actions.toggleModal(true));
             dispatch(
                 createEmployeeSlice.actions.addEmployee({
-                    firstName: firstName.value,
-                    lastname: lastname.value,
+                    firstName: firstname.value,
+                    lastName: lastname.value,
                     dateOfBirth: dateOfBirth.value,
                     startDate: startDate.value,
                     address: {
@@ -58,50 +89,47 @@ function CreateEmployeeForm() {
             }}
         >
             <label htmlFor="first-name">First Name</label>
-            <input type="text" id="first-name" name="firstname" />
+            <input type="text" id="first-name" name="firstname" required />
 
             <label htmlFor="last-name">Last Name</label>
-            <input type="text" id="last-name" name="lastname" />
+            <input type="text" id="last-name" name="lastname" required />
 
             <label htmlFor="date-of-birth">Date of Birth</label>
-            <input id="date-of-birth" type="date" name="dateOfBirth" />
+            <InputDate
+                id="date-of-birth"
+                name="dateOfBirth"
+                isRequired={true}
+            />
 
             <label htmlFor="start-date">Start Date</label>
-            <input id="start-date" type="date" name="startDate" />
+            <InputDate id="start-date" name="startDate" isRequired={true} />
 
             <fieldset className="address">
                 <legend>Address</legend>
 
                 <label htmlFor="street">Street</label>
-                <input id="street" type="text" name="street" />
+                <input id="street" type="text" name="street" required />
 
                 <label htmlFor="city">City</label>
-                <input id="city" type="text" name="city" />
+                <input id="city" type="text" name="city" required />
 
                 <label htmlFor="state">State</label>
-                <select name="state" id="state">
-                    {formStateSelectData.map((state) => (
-                        <option
-                            value={state.abbreviation}
-                            key={state.abbreviation}
-                        >
-                            {state.name}
-                        </option>
-                    ))}
-                </select>
+                <InputSelect
+                    name={undefined}
+                    id="state"
+                    options={formStateSelectData}
+                />
 
                 <label htmlFor="zip-code">Zip Code</label>
-                <input id="zip-code" type="number" name="zipCode" />
+                <input id="zip-code" type="number" name="zipCode" required />
             </fieldset>
 
             <label htmlFor="department">Department</label>
-            <select name="department" id="department">
-                <option>Sales</option>
-                <option>Marketing</option>
-                <option>Engineering</option>
-                <option>Human Resources</option>
-                <option>Legal</option>
-            </select>
+            <InputSelect
+                name={undefined}
+                id="department"
+                options={formDepartmentSelectData}
+            />
             <button type="submit">Save</button>
         </form>
     );

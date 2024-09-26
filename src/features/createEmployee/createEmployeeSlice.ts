@@ -21,7 +21,18 @@ export const createEmployeeSlice = createSlice({
     initialState: initialState,
     reducers: {
         addEmployee: (currentState, action) => {
-            return [...currentState, action.payload];
+            const newEmployee = action.payload;
+            console.log(newEmployee);
+            const newList = [...currentState, newEmployee];
+            localStorage.setItem("employees", JSON.stringify(newList));
+            return [...currentState, newEmployee];
+        },
+        storeEmployeesFromLocalStorage: () => {
+            let employeesList = [];
+            if (localStorage.getItem("employees")) {
+                employeesList = JSON.parse(localStorage.getItem("employees")!);
+            }
+            return employeesList;
         },
     },
 });

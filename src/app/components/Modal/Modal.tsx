@@ -12,18 +12,27 @@ function Modal() {
 
     return (
         isModalOpen && (
-            <div id="confirmation" className="modal">
-                Employee Created!
-                <a
-                    href="#close-modal"
-                    rel="modal:close"
-                    className="close-modal"
-                    onClick={(e) => {
-                        handleClose(e);
-                    }}
-                >
-                    Close
-                </a>
+            <div className="modal-container">
+                <div id="confirmation" className="modal">
+                    Employee Created!
+                    <a
+                        href="#close-modal"
+                        rel="modal:close"
+                        className="close-modal"
+                        onClick={(e) => {
+                            handleClose(e);
+                        }}
+                        aria-label="close"
+                    >
+                        <img
+                            src="./img/cross-svgrepo-com.svg"
+                            alt="close"
+                            aria-hidden="true"
+                            width="12"
+                            height="12"
+                        />
+                    </a>
+                </div>
             </div>
         )
     );
