@@ -68,12 +68,10 @@ function CreateEmployeeForm() {
                     lastName: lastname.value,
                     dateOfBirth: dateOfBirth.value,
                     startDate: startDate.value,
-                    address: {
-                        street: street.value,
-                        city: city.value,
-                        state: state.value,
-                        zipCode: zipCode.value,
-                    },
+                    street: street.value,
+                    city: city.value,
+                    state: state.value,
+                    zipCode: zipCode.value,
                     department: department.value,
                 })
             );

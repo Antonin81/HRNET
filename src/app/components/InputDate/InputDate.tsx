@@ -1,8 +1,4 @@
-type InputDateProps = {
-    name: string | undefined;
-    id: string;
-    isRequired: boolean;
-};
+import { InputDateProps } from "../../../common/utils/types";
 
 function InputDate({ name, id, isRequired }: InputDateProps) {
     return (

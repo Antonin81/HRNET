@@ -1,11 +1,4 @@
-type InputSelectProps = {
-    name: string | undefined;
-    id: string;
-    options: {
-        name: string;
-        value: string | undefined;
-    }[];
-};
+import { InputSelectProps } from "../../../common/utils/types";
 
 function InputSelect({ name, id, options }: InputSelectProps) {
     return (

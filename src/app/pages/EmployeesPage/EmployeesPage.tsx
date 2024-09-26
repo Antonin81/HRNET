@@ -20,10 +20,10 @@ function EmployeesPage() {
                             <p>{employee.dateOfBirth}</p>
                             <p>{employee.startDate}</p>
                             <p>{employee.department}</p>
-                            <p>{employee.address.street}</p>
-                            <p>{employee.address.city}</p>
-                            <p>{employee.address.state}</p>
-                            <p>{employee.address.street}</p>
+                            <p>{employee.street}</p>
+                            <p>{employee.city}</p>
+                            <p>{employee.state}</p>
+                            <p>{employee.street}</p>
                         </>
                     );
                 })}{" "}

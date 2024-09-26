@@ -1,18 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-interface Employee {
-    firstName: string;
-    lastName: string;
-    dateOfBirth: string;
-    startDate: string;
-    address: {
-        street: string;
-        city: string;
-        state: string;
-        zipCode: number;
-    };
-    department: string;
-}
+import { Employee } from "../../common/utils/types";
 
 const initialState: Array<Employee> = [];
 
@@ -22,7 +9,6 @@ export const createEmployeeSlice = createSlice({
     reducers: {
         addEmployee: (currentState, action) => {
             const newEmployee = action.payload;
-            console.log(newEmployee);
             const newList = [...currentState, newEmployee];
             localStorage.setItem("employees", JSON.stringify(newList));
             return [...currentState, newEmployee];
