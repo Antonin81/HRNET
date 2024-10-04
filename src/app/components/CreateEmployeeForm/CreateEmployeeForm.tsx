@@ -32,9 +32,9 @@ function CreateEmployeeForm() {
 
         return (
             date1 < date2 &&
-            diffYears(date1, date2) > 16 &&
+            diffYears(date1, date2) >= 16 &&
             date1 < today &&
-            diffYears(date1, today) > 16
+            diffYears(date1, today) >= 16
         );
     }
 
