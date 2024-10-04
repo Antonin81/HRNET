@@ -30,12 +30,7 @@ function CreateEmployeeForm() {
         let date2 = new Date(givenDate2);
         let today = new Date();
 
-        return (
-            date1 < date2 &&
-            diffYears(date1, date2) >= 16 &&
-            date1 < today &&
-            diffYears(date1, today) >= 16
-        );
+        return date1 < date2 && diffYears(date1, date2) >= 16 && date1 < today;
     }
 
     function saveEmployee(e: React.FormEvent<HTMLFormElement>) {
