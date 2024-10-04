@@ -16,6 +16,8 @@ function CreateEmployeeForm() {
     function testDates(dateBirth: string, dateStart: string) {
         let date1 = new Date(dateBirth);
         let date2 = new Date(dateStart);
+        let today = new Date();
+
         let diffYears = date2.getFullYear() - date1.getFullYear();
         if (
             date2.getMonth() < date1.getMonth() ||
@@ -24,11 +26,12 @@ function CreateEmployeeForm() {
         ) {
             diffYears--;
         }
-        return date1 < date2 && diffYears > 16;
+        return date1 < date2 && diffYears > 16 && date1 < today;
     }
 
     function saveEmployee(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+
         const {
             firstname,
             lastname,
@@ -75,6 +78,7 @@ function CreateEmployeeForm() {
                     department: department.value,
                 })
             );
+            e.currentTarget.reset();
         }
     }
 

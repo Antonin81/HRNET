@@ -6,7 +6,7 @@ function InputDate({ name, id, isRequired }: InputDateProps) {
             id={id}
             type="date"
             name={name ? name : id}
-            required={isRequired}
+            {...(isRequired && { required: isRequired })}
         />
     );
 }
