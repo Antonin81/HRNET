@@ -13,11 +13,7 @@ function CreateEmployeeForm() {
         dispatch(createEmployeeSlice.actions.storeEmployeesFromLocalStorage());
     }, []);
 
-    function testDates(dateBirth: string, dateStart: string) {
-        let date1 = new Date(dateBirth);
-        let date2 = new Date(dateStart);
-        let today = new Date();
-
+    function diffYears(date1: Date, date2: Date) {
         let diffYears = date2.getFullYear() - date1.getFullYear();
         if (
             date2.getMonth() < date1.getMonth() ||
@@ -26,7 +22,20 @@ function CreateEmployeeForm() {
         ) {
             diffYears--;
         }
-        return date1 < date2 && diffYears > 16 && date1 < today;
+        return diffYears;
+    }
+
+    function testDates(givenDate1: string, givenDate2: string) {
+        let date1 = new Date(givenDate1);
+        let date2 = new Date(givenDate2);
+        let today = new Date();
+
+        return (
+            date1 < date2 &&
+            diffYears(date1, date2) > 16 &&
+            date1 < today &&
+            diffYears(date1, today) > 16
+        );
     }
 
     function saveEmployee(e: React.FormEvent<HTMLFormElement>) {
