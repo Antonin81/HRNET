@@ -6,24 +6,13 @@ import { createEmployeeSlice } from "../../../features/createEmployee/createEmpl
 import { modalSlice } from "../../../features/modal/modalSlice";
 import InputDate from "../InputDate/InputDate";
 import InputSelect from "../InputSelect/InputSelect";
+import { diffYears } from "../../../common/helpers/functions";
 
 function CreateEmployeeForm() {
     const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(createEmployeeSlice.actions.storeEmployeesFromLocalStorage());
     }, []);
-
-    function diffYears(date1: Date, date2: Date) {
-        let diffYears = date2.getFullYear() - date1.getFullYear();
-        if (
-            date2.getMonth() < date1.getMonth() ||
-            (date2.getMonth() === date1.getMonth() &&
-                date2.getDate() < date1.getDate())
-        ) {
-            diffYears--;
-        }
-        return diffYears;
-    }
 
     function testDates(givenDate1: string, givenDate2: string) {
         let date1 = new Date(givenDate1);
