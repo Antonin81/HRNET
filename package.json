@@ -11,6 +11,7 @@
     "sass": "sass --watch ./src/app/sass/main.scss:./src/app/index.css --style expanded"
   },
   "dependencies": {
+    "@antonin-oc/react-data-table": "^0.1.11",
     "@reduxjs/toolkit": "^2.2.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

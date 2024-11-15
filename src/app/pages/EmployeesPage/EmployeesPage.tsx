@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../common/utils/hooks";
 import { createEmployeeSlice } from "../../../features/createEmployee/createEmployeeSlice";
+import { DataTable } from "@antonin-oc/react-data-table";
+import {
+    attributesTestAll,
+    dataTest,
+    headings,
+} from "../../../common/utils/dataTest";
 
 function EmployeesPage() {
     const dispatch = useAppDispatch();
@@ -11,6 +17,7 @@ function EmployeesPage() {
 
     return (
         <>
+            <a href="/">Home</a>
             {employees &&
                 employees.map((employee) => {
                     return (
@@ -27,7 +34,11 @@ function EmployeesPage() {
                         </>
                     );
                 })}{" "}
-            <a href="/">Home</a>
+            <DataTable
+                attributes={attributesTestAll}
+                data={dataTest}
+                headings={headings}
+            />
         </>
     );
 }
