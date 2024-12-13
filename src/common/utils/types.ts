@@ -24,3 +24,8 @@ export interface Employee {
     zipCode: number;
     department: string;
 }
+
+export interface tableHeading {
+    title: string;
+    data: string;
+}

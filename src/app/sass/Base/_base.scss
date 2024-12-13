@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #cdd3ff;
+    min-height: 100dvh;
+    margin: 0;
+    padding-block: 40px;
+}
+
+#root {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

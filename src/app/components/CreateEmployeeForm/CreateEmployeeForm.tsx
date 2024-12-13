@@ -83,48 +83,93 @@ function CreateEmployeeForm() {
                 saveEmployee(e);
             }}
         >
-            <label htmlFor="first-name">First Name</label>
-            <input type="text" id="first-name" name="firstname" required />
+            <div className="inputs-container">
+                <div>
+                    <label htmlFor="first-name">First Name :</label>
+                    <input
+                        type="text"
+                        id="first-name"
+                        name="firstname"
+                        required
+                    />
+                </div>
+                <div>
+                    <label htmlFor="last-name">Last Name :</label>
+                    <input
+                        type="text"
+                        id="last-name"
+                        name="lastname"
+                        required
+                    />
+                </div>
+            </div>
 
-            <label htmlFor="last-name">Last Name</label>
-            <input type="text" id="last-name" name="lastname" required />
-
-            <label htmlFor="date-of-birth">Date of Birth</label>
-            <InputDate
-                id="date-of-birth"
-                name="dateOfBirth"
-                isRequired={true}
-            />
-
-            <label htmlFor="start-date">Start Date</label>
-            <InputDate id="start-date" name="startDate" isRequired={true} />
+            <div className="inputs-container">
+                <div>
+                    <label htmlFor="date-of-birth">Date of Birth :</label>
+                    <InputDate
+                        id="date-of-birth"
+                        name="dateOfBirth"
+                        isRequired={true}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="start-date">Start Date :</label>
+                    <InputDate
+                        id="start-date"
+                        name="startDate"
+                        isRequired={true}
+                    />
+                </div>
+            </div>
 
             <fieldset className="address">
                 <legend>Address</legend>
 
-                <label htmlFor="street">Street</label>
-                <input id="street" type="text" name="street" required />
+                <div className="inputs-container">
+                    <div>
+                        <label htmlFor="street">Street</label>
+                        <input id="street" type="text" name="street" required />
+                    </div>
+                    <div>
+                        <label htmlFor="city">City</label>
+                        <input id="city" type="text" name="city" required />
+                    </div>
+                </div>
 
-                <label htmlFor="city">City</label>
-                <input id="city" type="text" name="city" required />
-
-                <label htmlFor="state">State</label>
-                <InputSelect
-                    name={undefined}
-                    id="state"
-                    options={formStateSelectData}
-                />
-
-                <label htmlFor="zip-code">Zip Code</label>
-                <input id="zip-code" type="number" name="zipCode" required />
+                <div className="inputs-container">
+                    <div>
+                        <label htmlFor="state">State</label>
+                        <InputSelect
+                            name={undefined}
+                            id="state"
+                            options={formStateSelectData}
+                        />
+                    </div>
+                </div>
+                <div className="inputs-container">
+                    <div>
+                        <label htmlFor="zip-code">Zip Code</label>
+                        <input
+                            id="zip-code"
+                            type="number"
+                            name="zipCode"
+                            required
+                        />
+                    </div>
+                </div>
             </fieldset>
 
-            <label htmlFor="department">Department</label>
-            <InputSelect
-                name={undefined}
-                id="department"
-                options={formDepartmentSelectData}
-            />
+            <div className="inputs-container">
+                <div>
+                    <label htmlFor="department">Department</label>
+                    <InputSelect
+                        name={undefined}
+                        id="department"
+                        options={formDepartmentSelectData}
+                    />
+                </div>
+            </div>
             <button type="submit">Save</button>
         </form>
     );

@@ -1,0 +1,38 @@
+#create-employee {
+    input,
+    select {
+        border-radius: 5px;
+        border: 2px solid #b1b1b1;
+        width: 100%;
+        &:hover {
+            background-color: #edefff;
+            option {
+                background-color: white;
+            }
+        }
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .address {
+        margin-top: 10px;
+    }
+
+    .inputs-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        > div {
+            width: 100%;
+        }
+    }
+
+    fieldset {
+        border-radius: 5px;
+        border: 2px solid #b1b1b1;
+    }
+}

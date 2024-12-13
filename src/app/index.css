@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .modal-container {
   background-color: rgba(0, 0, 0, 0.75);
   position: absolute;
@@ -33,10 +34,114 @@
   border-radius: 10000px;
 }
 
-.title {
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: #cdd3ff;
+  min-height: 100dvh;
+  margin: 0;
+  padding-block: 40px;
+}
+
+#root {
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+main {
+  background-color: white;
+  width: fit-content;
+  height: auto;
+  padding: 30px 70px;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+main .title {
+  text-align: center;
+  position: relative;
+  padding-bottom: 40px;
+}
+main .title h1 {
+  font-size: 2.5em;
+}
+main .title .page-link {
+  padding: 5px;
+  background-color: #cdd3ff;
+  border-radius: 5px;
+  text-decoration: none;
+  display: block;
+  color: black;
+  font-weight: bold;
+  width: fit-content;
+  margin-inline: auto;
+}
+main .title .page-link:active {
+  box-shadow: inset 0 0 3px #111;
+}
+main .title::after {
+  content: "";
+  border-top: 2px #e2e2e2 solid;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main button {
+  padding: 5px;
+  background-color: #cdd3ff;
+  border-radius: 5px;
+  text-decoration: none;
+  display: block;
+  color: black;
+  font-weight: bold;
+  width: fit-content;
+  margin-inline: auto;
+  border: none;
+  cursor: pointer;
+}
+main button:active {
+  box-shadow: inset 0 0 3px #111;
+}
+
+#create-employee input,
+#create-employee select {
+  border-radius: 5px;
+  border: 2px solid #b1b1b1;
+  width: 100%;
+}
+#create-employee input:hover,
+#create-employee select:hover {
+  background-color: #edefff;
+}
+#create-employee input:hover option,
+#create-employee select:hover option {
+  background-color: white;
+}
+#create-employee label {
+  display: block;
+  margin-bottom: 10px;
+}
+#create-employee .address {
+  margin-top: 10px;
+}
+#create-employee .inputs-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+#create-employee .inputs-container > div {
+  width: 100%;
+}
+#create-employee fieldset {
+  border-radius: 5px;
+  border: 2px solid #b1b1b1;
 }
 
 .container {
@@ -46,14 +151,8 @@
   justify-content: center;
 }
 
-label {
+a {
   display: block;
-  margin-top: 1rem;
-  margin-bottom: 10px;
-}
-
-.address {
-  margin-top: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */

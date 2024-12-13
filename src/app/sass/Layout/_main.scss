@@ -1,0 +1,55 @@
+main {
+    background-color: white;
+    width: fit-content;
+    height: auto;
+    padding: 30px 70px;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba($color: black, $alpha: 0.3);
+    .title {
+        text-align: center;
+        position: relative;
+        padding-bottom: 40px;
+        h1 {
+            font-size: 2.5em;
+        }
+        .page-link {
+            padding: 5px;
+            background-color: #cdd3ff;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            color: black;
+            font-weight: bold;
+            width: fit-content;
+            margin-inline: auto;
+            &:active {
+                box-shadow: inset 0 0 3px #111;
+            }
+        }
+        &::after {
+            content: "";
+            border-top: 2px #e2e2e2 solid;
+            width: 100%;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    button {
+        padding: 5px;
+        background-color: #cdd3ff;
+        border-radius: 5px;
+        text-decoration: none;
+        display: block;
+        color: black;
+        font-weight: bold;
+        width: fit-content;
+        margin-inline: auto;
+        border: none;
+        cursor: pointer;
+        &:active {
+            box-shadow: inset 0 0 3px #111;
+        }
+    }
+}

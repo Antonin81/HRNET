@@ -1,9 +1,5 @@
 import { TableHTMLAttributes } from "react";
-
-export interface tableHeading {
-    title: string;
-    data: string;
-}
+import { tableHeading } from "./types";
 
 export const headings: tableHeading[] = [
     { title: "First Name", data: "firstName" },
@@ -27,7 +23,7 @@ export const attributesTestNothing: TableHTMLAttributes<any> = {
 
 export const attributesTestAll: TableHTMLAttributes<any> = {
     id: "table-test-all",
-    className: "data-table",
+    className: "data-table-classic",
     style: {
         backgroundColor: "white",
     },
