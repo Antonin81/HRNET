@@ -84,8 +84,10 @@ function CreateEmployeeForm() {
             }}
         >
             <div className="inputs-container">
-                <div>
-                    <label htmlFor="first-name">First Name :</label>
+                <div className="label-input-wrapper">
+                    <div>
+                        <label htmlFor="first-name">First Name</label>
+                    </div>
                     <input
                         type="text"
                         id="first-name"
@@ -93,8 +95,10 @@ function CreateEmployeeForm() {
                         required
                     />
                 </div>
-                <div>
-                    <label htmlFor="last-name">Last Name :</label>
+                <div className="label-input-wrapper">
+                    <div>
+                        <label htmlFor="last-name">Last Name</label>
+                    </div>
                     <input
                         type="text"
                         id="last-name"
@@ -105,16 +109,20 @@ function CreateEmployeeForm() {
             </div>
 
             <div className="inputs-container">
-                <div>
-                    <label htmlFor="date-of-birth">Date of Birth :</label>
+                <div className="label-input-wrapper">
+                    <div>
+                        <label htmlFor="date-of-birth">Date of Birth</label>
+                    </div>
                     <InputDate
                         id="date-of-birth"
                         name="dateOfBirth"
                         isRequired={true}
                     />
                 </div>
-                <div>
-                    <label htmlFor="start-date">Start Date :</label>
+                <div className="label-input-wrapper">
+                    <div>
+                        <label htmlFor="start-date">Start Date</label>
+                    </div>
                     <InputDate
                         id="start-date"
                         name="startDate"
@@ -127,19 +135,25 @@ function CreateEmployeeForm() {
                 <legend>Address</legend>
 
                 <div className="inputs-container">
-                    <div>
-                        <label htmlFor="street">Street</label>
+                    <div className="label-input-wrapper">
+                        <div>
+                            <label htmlFor="street">Street</label>
+                        </div>
                         <input id="street" type="text" name="street" required />
                     </div>
-                    <div>
-                        <label htmlFor="city">City</label>
+                    <div className="label-input-wrapper">
+                        <div>
+                            <label htmlFor="city">City</label>
+                        </div>
                         <input id="city" type="text" name="city" required />
                     </div>
                 </div>
 
                 <div className="inputs-container">
-                    <div>
-                        <label htmlFor="state">State</label>
+                    <div className="label-input-wrapper">
+                        <div>
+                            <label htmlFor="state">State</label>
+                        </div>
                         <InputSelect
                             name={undefined}
                             id="state"
@@ -148,8 +162,10 @@ function CreateEmployeeForm() {
                     </div>
                 </div>
                 <div className="inputs-container">
-                    <div>
-                        <label htmlFor="zip-code">Zip Code</label>
+                    <div className="label-input-wrapper">
+                        <div>
+                            <label htmlFor="zip-code">Zip Code</label>
+                        </div>
                         <input
                             id="zip-code"
                             type="number"
@@ -161,8 +177,10 @@ function CreateEmployeeForm() {
             </fieldset>
 
             <div className="inputs-container">
-                <div>
-                    <label htmlFor="department">Department</label>
+                <div className="label-input-wrapper">
+                    <div>
+                        <label htmlFor="department">Department :</label>
+                    </div>
                     <InputSelect
                         name={undefined}
                         id="department"
