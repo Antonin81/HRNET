@@ -5,7 +5,7 @@ export const modalSlice = createSlice({
     name: "modalSlice",
     initialState: initialState,
     reducers: {
-        toggleModal: (currentState, action) => {
+        toggleModal: (_, action) => {
             return action.payload;
         },
     },

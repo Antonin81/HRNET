@@ -179,7 +179,7 @@ function CreateEmployeeForm() {
             <div className="inputs-container">
                 <div className="label-input-wrapper">
                     <div>
-                        <label htmlFor="department">Department :</label>
+                        <label htmlFor="department">Department</label>
                     </div>
                     <InputSelect
                         name={undefined}
