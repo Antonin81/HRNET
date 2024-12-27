@@ -16,9 +16,11 @@ This project is a small app to register all the employees in a company.
 
 ## How it looks
 
--   The registration form :
+-   The registration form :\
+![Capture d'écran 2024-12-27 143818](https://github.com/user-attachments/assets/4ac6de08-1b8a-4a1c-9242-150ad7968ee2)
 
--   The employees registered :
+-   The employees registered :\
+![Capture d’écran 2024-12-27 143851](https://github.com/user-attachments/assets/af5f5ea8-1b40-486b-9dfa-7b17e82951de)
 
 ## How to work on it
 
