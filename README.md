@@ -17,14 +17,14 @@ This project is a small app to register all the employees in a company.
 ## How it looks
 
 -   The registration form :\
-![Capture d'écran 2024-12-27 143818](https://github.com/user-attachments/assets/4ac6de08-1b8a-4a1c-9242-150ad7968ee2)
+    ![Capture d'écran 2024-12-27 143818](https://github.com/user-attachments/assets/4ac6de08-1b8a-4a1c-9242-150ad7968ee2)
 
 -   The employees registered :\
-![Capture d’écran 2024-12-27 143851](https://github.com/user-attachments/assets/af5f5ea8-1b40-486b-9dfa-7b17e82951de)
+    ![Capture d’écran 2024-12-27 143851](https://github.com/user-attachments/assets/af5f5ea8-1b40-486b-9dfa-7b17e82951de)
 
 ## How to work on it
 
-This project uses React, Typescript, Sass, npm, Eslint and Prettier \
+This project uses React, Redux, Typescript, Sass, npm, Eslint and Prettier \
 To work on it, fork the project.\
 Here are the executable commands :
 
@@ -63,6 +63,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 You can find help to use these tools by looking at these links :
 
 -   React - [React documentation](https://react.dev).
+-   Redux - [Redux website](https://redux.js.org)
 -   TypeScript - [TypeScript documentation](https://www.typescriptlang.org/docs/).
 -   Sass - [Sass documentation](https://sass-lang.com/documentation/).
 -   npm - [npm documentation](https://docs.npmjs.com).
