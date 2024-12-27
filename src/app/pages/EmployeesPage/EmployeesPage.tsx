@@ -35,15 +35,18 @@ function EmployeesPage() {
                     Home
                 </a>
             </div>
-            {employees && employees.length !== 0 ? (
-                <DataTable
-                    attributes={attributes}
-                    data={employees}
-                    headings={headings}
-                />
-            ) : (
-                <p>Loading employees...</p>
-            )}
+            <div className="container">
+                <h2>Current Employees</h2>
+                {employees && employees.length !== 0 ? (
+                    <DataTable
+                        attributes={attributes}
+                        data={employees}
+                        headings={headings}
+                    />
+                ) : (
+                    <p>Loading employees...</p>
+                )}
+            </div>
         </main>
     );
 }
